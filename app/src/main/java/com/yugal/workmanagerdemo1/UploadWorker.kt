@@ -9,12 +9,13 @@ import java.lang.Exception
 class UploadWorker(context:Context,params:WorkerParameters): Worker(context,params) {
     override fun doWork(): Result {
         try {
-            for (i in 0..600) {
+            for (i in 0..600000) {
                 Log.i("MYTAG", "Uploading $i")
             }
             return Result.success()
         }catch (e:Exception){
             return Result.failure()
+
         }
     }
 }
